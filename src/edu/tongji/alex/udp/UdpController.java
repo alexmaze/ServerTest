@@ -17,17 +17,23 @@ public class UdpController {
 	DatagramPacket sendPacket;
 	byte recByte[];
 	byte sendByte[];
-
-	recByte = new byte[BUFFER_SIZE];
-	sendByte = new byte[BUFFER_SIZE];
 	
 	public UdpController() {
 
-		theSocket = new DatagramSocket(PORT + 1);
+		try {
+			theSocket = new DatagramSocket(PORT + 1);
+		} catch (SocketException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void send(String sendInfo) {
 
+
+		recByte = new byte[BUFFER_SIZE];
+		sendByte = new byte[BUFFER_SIZE];
+		
 		try {
 
 			sendByte = sendInfo.getBytes();

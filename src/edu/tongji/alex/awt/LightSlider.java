@@ -114,7 +114,7 @@ public class LightSlider extends JFrame {
 			label.setText(frequency + " / 8");
 
 			// TODO 连接代码
-			UdpController.send(frequency + " / 8");
+			udpController.send(frequency + " / 8");
 		}
 	}
 
