@@ -15,6 +15,8 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import edu.tongji.alex.udp.UdpController;
+
 public class LightSlider extends JFrame {
 	/**
 	 * 
@@ -24,6 +26,9 @@ public class LightSlider extends JFrame {
 	protected JLabel label;
 
 	protected JSlider slider;
+	
+
+	UdpController udpController = new UdpController();
 
 	public LightSlider() {
 		init();
@@ -109,7 +114,7 @@ public class LightSlider extends JFrame {
 			label.setText(frequency + " / 8");
 
 			// TODO 连接代码
-
+			UdpController.send(frequency + " / 8");
 		}
 	}
 
