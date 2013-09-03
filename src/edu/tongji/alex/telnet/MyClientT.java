@@ -11,7 +11,7 @@ public class MyClientT {
 	private InputStream in;
 	private PrintStream out;
 	private String prompt;
-	String s = "C:\\Users\\CDI-Render-03";
+	String s = "QNET";
 
 	public void TelnetCmd(String server, String user, String password,
 			String cmd) {
@@ -107,7 +107,8 @@ public class MyClientT {
 
 			System.out.println("Start");
 			MyClientT telnet = new MyClientT();
-			telnet.TelnetCmd("192.168.1.222", "CDI-Render-03", "cdi2013", "dir");
+			telnet.TelnetCmd("192.168.1.2", "admin", "admin1", "#device,76,10,3");
+			telnet.TelnetCmd("192.168.1.2", "admin", "admin1", "#device,76,10,3");
 			System.out.println("End");
 			telnet.disconnect();
 		} catch (Exception e) {
